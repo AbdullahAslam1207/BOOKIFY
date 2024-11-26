@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.NotificationController"
+            prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;">
+    <children>
+        <VBox alignment="CENTER" spacing="20.0" layoutX="50.0" layoutY="20.0" prefWidth="700.0">
+            <!-- Title -->
+            <Label text="Notifications" style="-fx-font-size: 24px; -fx-text-fill: gold;" />
+
+            <!-- Notifications List -->
+            <ScrollPane fitToWidth="true" fitToHeight="true" prefHeight="500.0" prefWidth="700.0" style="-fx-padding: 10;">
+                <VBox fx:id="notificationListContainer" spacing="10.0" style="-fx-padding: 10;" />
+            </ScrollPane>
+        </VBox>
+    </children>
+</AnchorPane>

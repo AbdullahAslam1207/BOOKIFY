@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="488.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.CustomerNotification" stylesheets="@styles/dashboard-theme.css">
+   <children>
+      <AnchorPane fx:id="mainContent" layoutX="10.0" layoutY="10.0" prefHeight="488.0" prefWidth="622.0" styleClass="main-content">
+         <children>
+            <!-- Page Title -->
+            <Label fx:id="placeholderLabel" layoutX="200.0" layoutY="14.0" text="Customer Dashboard" styleClass="heading" />
+
+            <!-- Notification Title -->
+            <Label fx:id="notificationLabel" layoutX="202.0" layoutY="66.0" text="Notification" styleClass="subheading">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+
+            <!-- TableView for Notifications -->
+            <TableView fx:id="notificationTable" layoutX="55.0" layoutY="183.0" prefHeight="238.0" prefWidth="482.0" styleClass="table">
+               <columns>
+                  <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="fromColumn" prefWidth="75.0" text="From" />
+                  <TableColumn fx:id="notificationColumn" prefWidth="331.1999877929687" text="Notification" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

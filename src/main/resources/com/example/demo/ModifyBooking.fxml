@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controllers.ModifyBookingsController">
+    <children>
+        <!-- Room Bookings Section -->
+        <Label text="Room Bookings" layoutX="20" layoutY="20" styleClass="heading" />
+        <TableView fx:id="roomBookingsTable" layoutX="20" layoutY="50" prefWidth="700" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="roomBookingIdColumn" text="Booking ID" prefWidth="100" />
+                <TableColumn fx:id="roomHotelColumn" text="Hotel ID" prefWidth="100" />
+
+                <TableColumn fx:id="roomDateColumn" text="Date" prefWidth="150" />
+                <TableColumn fx:id="roomStatusColumn" text="Status" prefWidth="100" />
+            </columns>
+        </TableView>
+
+        <!-- Table Bookings Section -->
+        <Label text="Table Bookings" layoutX="20" layoutY="270" styleClass="heading" />
+        <TableView fx:id="tableBookingsTable" layoutX="20" layoutY="300" prefWidth="700" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="tableBookingIdColumn" text="Booking ID" prefWidth="100" />
+                <TableColumn fx:id="tableRestaurantColumn" text="Restaurant ID" prefWidth="100" />
+
+                <TableColumn fx:id="tableDateColumn" text="Date" prefWidth="150" />
+                <TableColumn fx:id="tableStatusColumn" text="Status" prefWidth="100" />
+            </columns>
+        </TableView>
+
+        <!-- Modify and Delete Section -->
+        <TextField fx:id="bookingIdField" promptText="Booking ID" layoutX="20" layoutY="520" />
+        <DatePicker fx:id="newDatePicker" layoutX="150" layoutY="520" />
+        <Button text="Modify Date" onAction="#handleModifyDate" layoutX="350" layoutY="520" />
+        <Button text="Delete Booking" onAction="#handleDeleteBooking" layoutX="450" layoutY="520" />
+    </children>
+</AnchorPane>

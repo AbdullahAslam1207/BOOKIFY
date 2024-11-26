@@ -1,0 +1,196 @@
+/* General Styles */
+* {
+    -fx-font-family: "Arial";
+}
+
+/* Sidebar Styles */
+.sidebar {
+    -fx-background-color: #2c3e50; /* Dark Navy Blue */
+}
+
+.sidebar-header {
+    -fx-padding: 10;
+    -fx-background-color: #34495e; /* Slightly lighter blue */
+}
+
+.sidebar-buttons {
+    -fx-padding: 10;
+    -fx-spacing: 20;
+}
+
+/* Sidebar Button Styles */
+.sidebar-button {
+    -fx-background-color: #34495e; /* Dark Blue for Buttons */
+    -fx-text-fill: white; /* White Text */
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10 20;
+    -fx-cursor: hand; /* Changes cursor to pointer */
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #3b5998; /* Blue Hover Effect */
+}
+
+.sidebar-button:pressed {
+    -fx-background-color: #1d2b36; /* Slightly darker blue on click */
+}
+
+/* Collapse Button */
+.collapse-button {
+    -fx-font-size: 20px;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+/* Main Content Styles */
+.main-content {
+    -fx-background-color: #1C1C1C; /* Blackish Gray */
+}
+
+.placeholder-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: white; /* White text for visibility */
+    -fx-padding: 10;
+}
+/* General Text Styling */
+.text-white {
+    -fx-text-fill: white; /* White text color */
+    -fx-font-size: 16px; /* Default text size */
+}
+
+/* Headings */
+.heading {
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 24px; /* Larger text size for headings */
+    -fx-font-weight: bold;
+}
+
+/* Buttons in Other Views */
+.view-button {
+    -fx-background-color: #34495e; /* Dark blue */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10 20;
+    -fx-cursor: hand; /* Pointer on hover */
+}
+
+.view-button:hover {
+    -fx-background-color: #3b5998; /* Lighter blue hover effect */
+}
+
+.view-button:pressed {
+    -fx-background-color: #1d2b36; /* Darker blue on press */
+}
+
+
+.input-field {
+    -fx-background-color: #2c2c2c;
+    -fx-border-color: gold;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #a9a9a9;
+}
+
+.primary-button {
+    -fx-background-color: gold;
+    -fx-text-fill: #000000;
+    -fx-padding: 10;
+    -fx-border-radius: 5;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 5, 0, 0, 0);
+}
+
+.primary-button:hover {
+    -fx-background-color: #ffd700;
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: gold;
+    -fx-underline: true;
+    -fx-padding: 5;
+}
+
+.toggle-button {
+    -fx-background-color: #000000;
+    -fx-text-fill: gold;
+    -fx-border-color: gold;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.toggle-button:hover {
+    -fx-background-color: gold;
+    -fx-text-fill: #000000;
+}
+
+.role-button {
+    -fx-background-color: transparent;
+    -fx-border-color: gold;
+    -fx-border-radius: 10;
+    -fx-text-fill: gold;
+    -fx-padding: 10 20;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.role-button:hover {
+    -fx-background-color: gold;
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+}
+
+.role-button:pressed {
+    -fx-background-color: #c0a000;
+    -fx-text-fill: black;
+}
+.primary-button {
+    -fx-background-color: linear-gradient(to right, #DAA520, #FFD700);
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to right, #FFD700, #DAA520);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 12, 0, 0, 0);
+}
+.table-view {
+    -fx-text-fill: white; /* Ensures text is visible on a dark background */
+    -fx-control-inner-background: black; /* Table background */
+    -fx-table-cell-border-color: grey; /* Table cell borders */
+}
+
+.table-view .column-header-background {
+    -fx-background-color: gold; /* Header background color */
+}
+.default-color0.chart-bar {
+    -fx-bar-fill: black; /* Change bar color to white */
+}
+
+.default-color0.chart-bar:hover {
+    -fx-bar-fill: gold; /* Optional: Hover effect for better visibility */
+}
+
+.chart-legend-item-symbol {
+    -fx-background-color: white, white; /* Legend item color */
+}
+
+.chart {
+    -fx-font-size: 14px; /* Adjust font size for better readability */
+}
+
+.axis-label, .axis-tick-mark-label {
+    -fx-text-fill: white; /* Axis labels color */
+}
+

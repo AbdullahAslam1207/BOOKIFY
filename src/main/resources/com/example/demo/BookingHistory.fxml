@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="525.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.BookingHistory" stylesheets="@styles/dashboard-theme.css">
+    <children>
+        <AnchorPane fx:id="mainContent" layoutX="-1.0" prefHeight="598.0" prefWidth="586.0" styleClass="main-content">
+            <children>
+                <!-- Styled Page Title -->
+                <Label fx:id="placeholderLabel" layoutX="200.0" layoutY="14.0" prefHeight="27.0" prefWidth="188.0" styleClass="heading" text="Booking History" />
+
+                <!-- TableView with Booking Details -->
+                <TableView fx:id="bookingTable" layoutX="89.0" layoutY="81.0" prefHeight="293.0" prefWidth="410.0">
+                    <columns>
+                        <TableColumn fx:id="bookingIdColumn" prefWidth="75.0" text="Booking ID" />
+                        <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+                        <TableColumn fx:id="cityColumn" prefWidth="79.19993591308594" text="City" />
+                        <TableColumn fx:id="detailsColumn" prefWidth="180.00003662109373" text="Details" />
+                    </columns>
+                </TableView>
+
+                <!-- Back Button -->
+                <Button fx:id="backButton" layoutX="29.0" layoutY="558.0" mnemonicParsing="false" text="Back" styleClass="view-button" />
+
+                <!-- Give Review Button -->
+                <Button fx:id="giveReviewButton" layoutX="253.0" layoutY="558.0" mnemonicParsing="false" text="Give Review" styleClass="view-button" />
+
+                <!-- Text Area for Review -->
+                <TextArea fx:id="reviewTextArea" layoutX="115.0" layoutY="434.0" prefHeight="102.0" prefWidth="359.0" styleClass="text-white" />
+
+                <!-- TextField for Booking ID -->
+                <TextField fx:id="bookingIdField" layoutX="183.0" layoutY="400.0" prefHeight="26.0" prefWidth="216.0" styleClass="textfield" />
+
+                <!-- Label for Booking ID -->
+                <Label fx:id="bookingIdLabel" layoutX="115.0" layoutY="404.0" text="Booking ID :" styleClass="text-white" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

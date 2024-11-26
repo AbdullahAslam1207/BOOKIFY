@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+
+<?import javafx.scene.control.TextField?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controllers.TargetedOffersController"
+            stylesheets="@styles/dashboard-theme.css">
+    <children>
+        <Label text="Targeted Offers" layoutX="20" layoutY="20" styleClass="heading" />
+        <Label text="Discount (%):" layoutX="20" layoutY="70" styleClass="text-white" />
+        <ComboBox fx:id="discountComboBox" layoutX="150" layoutY="70" prefWidth="200" />
+
+        <Label text="Validity Date:" layoutX="20" layoutY="120" styleClass="text-white" />
+        <DatePicker fx:id="validityDatePicker" layoutX="150" layoutY="120" prefWidth="200" />
+
+        <Label text="Discount Code:" layoutX="20" layoutY="170" styleClass="text-white" />
+        <TextField fx:id="discountCodeField" layoutX="150" layoutY="170" prefWidth="200" />
+
+        <Label text="Select Users:" layoutX="20" layoutY="220" styleClass="text-white" />
+        <ListView fx:id="usersListView" layoutX="150" layoutY="220" prefWidth="200" prefHeight="150" />
+
+        <Button fx:id="createOfferButton" text="Create Offer" layoutX="150" layoutY="400" styleClass="view-button" />
+    </children>
+</AnchorPane>

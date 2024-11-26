@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@styles/dashboard-theme.css" fx:controller="com.example.demo.controllers.AddServiceController"
+            style="-fx-background-color: black;">
+    <children>
+        <VBox alignment="CENTER" spacing="30" layoutX="150" layoutY="100">
+            <Button fx:id="cinemaButton" text="Cinema" styleClass="primary-button" onAction="#handleCinemaButton" />
+            <Button fx:id="restaurantButton" text="Restaurant" styleClass="primary-button" onAction="#handleRestaurantButton" />
+            <Button fx:id="hotelButton" text="Hotel" styleClass="primary-button" onAction="#handleHotelButton" />
+        </VBox>
+    </children>
+</AnchorPane>

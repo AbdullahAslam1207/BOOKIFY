@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.Dashboard">
+   <children>
+      <VBox spacing="10" layoutX="50" layoutY="20">
+         <!-- Show Hotels Section -->
+         <Button fx:id="showHotelsButton" text="Show Hotels" onAction="#handleShowHotels" />
+         <VBox fx:id="hotelListContainer" spacing="5" />
+
+         <!-- Select Hotel and Show Rooms -->
+         <TextField fx:id="hotelIdField" promptText="Hotel ID" />
+         <DatePicker fx:id="bookingDatePicker" promptText="Booking Date" />
+         <Button text="Show Available Rooms" onAction="#handleShowRooms" />
+
+         <!-- Room List Section -->
+         <VBox fx:id="roomListContainer" spacing="5" />
+
+         <!-- Booking Confirmation Section -->
+         <TextField fx:id="roomIdField" promptText="Room ID" />
+         <TextField fx:id="priceField" promptText="Price" />
+         <Button fx:id="confirmBookingButton" text="Confirm Booking" onAction="#handleConfirmBooking" />
+
+         <!-- Separator for Restaurants -->
+         <Separator orientation="HORIZONTAL" />
+
+         <!-- Show Restaurants Section -->
+         <Button fx:id="showRestaurantsButton" text="Show Restaurants" onAction="#handleShowRestaurants" />
+         <VBox fx:id="restaurantListContainer" spacing="5" />
+
+         <!-- Select Restaurant and Show Tables -->
+         <TextField fx:id="restaurantIdField" promptText="Restaurant ID" />
+         <DatePicker fx:id="bookDatePicker" promptText="Booking Date" />
+         <Button text="Show Available Tables" onAction="#handleShowTables" />
+
+         <!-- Table List Section -->
+         <VBox fx:id="tableListContainer" spacing="5" />
+
+         <!-- Table Booking Confirmation Section -->
+         <TextField fx:id="tableIdField" promptText="Table ID" />
+         <TextField fx:id="tablePriceField" promptText="Price" />
+         <Button fx:id="confirmTableBookingButton" text="Confirm Table Booking" onAction="#handleConfirmTableBooking" />
+      </VBox>
+   </children>
+</AnchorPane>

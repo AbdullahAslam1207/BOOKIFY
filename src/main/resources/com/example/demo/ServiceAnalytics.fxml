@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.controllers.ServiceAnalyticsController">
+    <BarChart fx:id="analyticsChart" prefWidth="600" prefHeight="400"
+              stylesheets="@styles/dashboard-theme.css">
+        <xAxis>
+            <CategoryAxis label="Services" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Completed Bookings" />
+        </yAxis>
+    </BarChart>
+
+</AnchorPane>

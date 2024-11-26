@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controllers.MembershipController" style="-fx-background-color: black;">
+    <children>
+        <VBox spacing="20" alignment="CENTER">
+            <Label text="Membership Plans" style="-fx-font-size: 24; -fx-text-fill: white;" />
+            <HBox spacing="15" alignment="CENTER">
+                <Button text="Simple - 5% Discount" onAction="#handleSimpleMembership" />
+                <Button text="Deluxe - 10% Discount" onAction="#handleDeluxeMembership" />
+                <Button text="Exclusive - 20% Discount" onAction="#handleExclusiveMembership" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

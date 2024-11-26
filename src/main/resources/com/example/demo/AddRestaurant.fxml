@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controllers.AddRestaurantController">
+    <children>
+        <VBox alignment="CENTER" spacing="20" layoutX="50.0" layoutY="50.0">
+            <Label fx:id="addres" text="Add New Restaurant" style="-fx-font-size: 20px;" />
+            <TextField fx:id="restaurantNameField" promptText="Restaurant Name" />
+            <TextField fx:id="totalTablesField" promptText="Total Tables" />
+            <Button fx:id="submitRestaurantButton" text="Add Restaurant" onAction="#handleAddRestaurant" />
+
+            <!-- Section to add tables -->
+            <VBox fx:id="tableDetailsContainer" spacing="10" visible="false">
+                <Label fx:id="addtab" text="Adding Tables..." />
+                <Button fx:id="addTableButton" text="Add Tables" onAction="#handleAddTable" />
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

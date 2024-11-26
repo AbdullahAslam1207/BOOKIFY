@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane fx:id="dashboardRoot" prefHeight="560.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.customerMain" stylesheets="@styles/dashboard-theme.css">
+
+    <!-- Sidebar (Collapsible) -->
+    <left>
+        <VBox fx:id="sidebar" prefWidth="200" spacing="10" styleClass="sidebar">
+            <!-- Collapsible Button -->
+            <HBox alignment="CENTER" style="-fx-padding: 10;">
+                <Button fx:id="collapseButton" onAction="#toggleSidebar" text="☰" styleClass="collapse-button" />
+            </HBox>
+
+            <!-- Sidebar Buttons -->
+            <VBox alignment="TOP_CENTER" prefHeight="203.0" prefWidth="200.0" spacing="20" style="-fx-padding: 10;">
+                <Button fx:id="MyAccountButton" onAction="#loadMyAccountPane" text="My Account" styleClass="sidebar-button" />
+                <Button fx:id="BookingButton1" onAction="#loadBookingPane" text="Booking" styleClass="sidebar-button" />
+                <Button fx:id="ViewbookingsButton" onAction="#handleViewBookings" text="View Booking" styleClass="sidebar-button" />
+                <Button fx:id="NotificationButton" onAction="#handleNotifications" text="Notification" styleClass="sidebar-button" />
+                <Button fx:id="CustomerSupportButton" onAction="#handleCustomerSupport"  text="Customer Support" styleClass="sidebar-button" />
+                <Button fx:id="PaymentButton" onAction="#loadPaymentPane" text="Payment" styleClass="sidebar-button" />
+                <Button fx:id="MembershipButton" onAction="#loadMembershipPane" text="Membership" styleClass="sidebar-button" />
+                <Button fx:id="ModifyButton" onAction="#handleModify" text="Modify" styleClass="sidebar-button" />
+
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <AnchorPane fx:id="mainContent" prefHeight="560.0" prefWidth="568.0" styleClass="main-content">
+            <!-- Page Title -->
+            <Label fx:id="placeholderLabel" layoutX="200.0" layoutY="14.0" text="Customer Dashboard" styleClass="heading" />
+            <StackPane alignment="CENTER" prefWidth="600" prefHeight="400">
+                <ImageView fx:id="welcomeImage" fitWidth="300" fitHeight="200" preserveRatio="true" />
+            </StackPane>
+
+        </AnchorPane>
+    </center>
+</BorderPane>

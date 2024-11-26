@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="dashboardRoot" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.ServiceOwnerDashboardController"
+            stylesheets="@styles/dashboard-theme.css">
+    <!-- Sidebar (Collapsible) -->
+    <left>
+        <VBox fx:id="sidebar" prefWidth="200" spacing="10" styleClass="sidebar">
+            <HBox alignment="CENTER" styleClass="sidebar-header">
+                <Button fx:id="collapseButton" onAction="#toggleSidebar" styleClass="sidebar-button" text="☰" />
+            </HBox>
+            <VBox alignment="TOP_CENTER" spacing="20" styleClass="sidebar-buttons">
+                <Button fx:id="addServiceButton" onAction="#loadAddServicePane" styleClass="sidebar-button" text="Add a Service" />
+                <Button fx:id="viewBookingsButton" onAction="#loadViewBookingsPane" styleClass="sidebar-button" text="View Bookings" />
+                <Button fx:id="customerSupportButton" onAction="#loadCustomerSupportPane" styleClass="sidebar-button" text="Customer Support" />
+                <Button fx:id="targetedOffersButton" onAction="#loadTargetedOffersPane" styleClass="sidebar-button" text="Targeted Offers" />
+                <Button fx:id="serviceAnalyticsButton" onAction="#loadServiceAnalyticsPane" styleClass="sidebar-button" text="Service Analytics" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <AnchorPane fx:id="mainContent" prefHeight="300.0" prefWidth="400.0" styleClass="main-content">
+            <Label fx:id="placeholderLabel" layoutX="20" layoutY="20" styleClass="placeholder-label"  />
+            <StackPane alignment="CENTER" prefWidth="600" prefHeight="400">
+                <ImageView fx:id="welcomeImage" fitWidth="300" fitHeight="200" preserveRatio="true" />
+            </StackPane>
+        </AnchorPane>
+    </center>
+</BorderPane>

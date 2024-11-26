@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="527.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.CustomerSup" stylesheets="@styles/dashboard-theme.css">
+   <children>
+      <AnchorPane fx:id="mainContent" prefHeight="527.0" prefWidth="620.0" styleClass="main-content">
+         <children>
+            <!-- Page Title -->
+            <Label fx:id="placeholderLabel" layoutX="222.0" layoutY="14.0" prefHeight="27.0" prefWidth="167.0" text="Customer Support" styleClass="heading" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

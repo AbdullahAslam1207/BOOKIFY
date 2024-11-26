@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.PaymentController"
+            prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;">
+    <children>
+        <VBox alignment="CENTER" spacing="20.0" layoutX="50.0" layoutY="20.0" prefWidth="700.0">
+            <!-- Title -->
+            <Label text="Payments" style="-fx-font-size: 20px; -fx-text-fill: gold;" />
+
+            <!-- Payment Option Selection -->
+            <HBox alignment="CENTER" spacing="20.0">
+                <RadioButton fx:id="bookingPaymentRadio" text="Booking Payment" />
+                <RadioButton fx:id="membershipPaymentRadio" text="Membership Payment" />
+            </HBox>
+
+            <!-- Payment List Section -->
+            <VBox fx:id="paymentListContainer" spacing="10.0" style="-fx-padding: 20;" />
+
+            <!-- Payment Confirmation Section -->
+            <VBox alignment="CENTER" spacing="10.0">
+                <TextField fx:id="bookingIdField" promptText="Booking ID" />
+                <TextField fx:id="membershipIdField" promptText="Membership ID" visible="true" />
+                <TextField fx:id="amountField" promptText="Amount" />
+                <ComboBox fx:id="paymentMethodComboBox" promptText="Payment Method" />
+                <TextField fx:id="discountCodeField" promptText="Enter Discount Code" style="-fx-padding: 10;" />
+                <Button fx:id="confirmDiscounttButton" text="Check Discount" onAction="#checkdiscount" />
+                <Button fx:id="confirmPaymentButton" text="Confirm Booking Payment" onAction="#handleConfirmPayment" />
+                <Button fx:id="confirmMembershipPaymentButton" text="Confirm Membership Payment" onAction="#handleMembershipPayment" />
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

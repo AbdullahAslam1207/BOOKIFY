@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="dashboardRoot" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.AdminDashboardController"
+            stylesheets="@styles/dashboard-theme.css">
+    <!-- Sidebar (Collapsible) -->
+    <left>
+        <VBox fx:id="sidebar" prefWidth="200" spacing="10" styleClass="sidebar">
+            <HBox alignment="CENTER" styleClass="sidebar-header">
+                <Button fx:id="collapseButton" onAction="#toggleSidebar" styleClass="sidebar-button" text="☰" />
+            </HBox>
+            <VBox alignment="TOP_CENTER" spacing="20" styleClass="sidebar-buttons">
+                <Button fx:id="viewBookingAdminButton" onAction="#loadViewBookingAdminPane" styleClass="sidebar-button" text="View all Bookings" />
+                <Button fx:id="customerSupportAdminButton" onAction="#handleCustomerSupport" styleClass="sidebar-button" text="Customer Support" />
+                <Button fx:id="authorizeuserAdminButton" onAction="#loadAuthorizeUserAdminPane" styleClass="sidebar-button" text="Authorize Users" />
+
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <AnchorPane fx:id="mainContent" prefHeight="300.0" prefWidth="400.0" styleClass="main-content">
+            <Label fx:id="placeholderLabel" layoutX="20" layoutY="20" styleClass="placeholder-label"  />
+            <StackPane alignment="CENTER" prefWidth="600" prefHeight="400">
+                <ImageView fx:id="welcomeImage" fitWidth="300" fitHeight="200" preserveRatio="true" />
+            </StackPane>
+        </AnchorPane>
+    </center>
+</BorderPane>
