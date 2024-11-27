@@ -1,78 +1,68 @@
 package com.example.demo.controllers;
 
+import com.example.demo.oop.factories.AnalyticsFactory;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
+
+import java.util.Map;
 
 public class ViewBookingAdminController {
 
     @FXML
-    private Label pageTitle; // Title Label
+    private BarChart<String, Number> bookingsBarChart;
 
     @FXML
-    private TableView<Booking> bookingsTable;
+    private PieChart revenuePieChart;
 
     @FXML
-    private TableColumn<Booking, String> serviceColumn;
+    private LineChart<String, Number> userActivityLineChart;
 
-    @FXML
-    private TableColumn<Booking, String> customerColumn;
-
-    @FXML
-    private TableColumn<Booking, String> dateColumn;
-
-    @FXML
-    private TableColumn<Booking, String> statusColumn;
+    private AnalyticsFactory analyticsFactory;
 
     public void initialize() {
-        // Set the title text
-        pageTitle.setText("View Confirmed or Canceled Bookings");
+        analyticsFactory = new AnalyticsFactory();
 
-        // Initialize table columns
-        serviceColumn.setCellValueFactory(new PropertyValueFactory<>("service"));
-        customerColumn.setCellValueFactory(new PropertyValueFactory<>("customer"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-
-        // Sample data including various statuses (Confirmed, Pending, Canceled)
-        ObservableList<Booking> allBookings = FXCollections.observableArrayList(
-                new Booking("Room Booking", "John Doe", "2024-11-20", "Confirmed"),
-                new Booking("Table Reservation", "Jane Smith", "2024-11-22", "Pending"),  // This will be filtered out
-                new Booking("Hall Booking", "Michael Johnson", "2024-12-01", "Canceled"),
-                new Booking("Spa Appointment", "Emily Davis", "2024-11-25", "Confirmed"),
-                new Booking("Car Rental", "Robert Brown", "2024-11-28", "Canceled")
-        );
-
-        // Filter to show only "Confirmed" or "Canceled" statuses
-        ObservableList<Booking> filteredBookings = allBookings.filtered(
-                booking -> booking.getStatus().equalsIgnoreCase("Confirmed") || booking.getStatus().equalsIgnoreCase("Canceled")
-        );
-
-        // Add the filtered bookings to the table
-        bookingsTable.setItems(filteredBookings);
+        // Load analytics
+        loadCompletedBookingsChart();
+        loadRevenuePieChart();
+        loadUserActivityChart();
     }
 
-    // Booking class for TableView data
-    public static class Booking {
-        private String service;
-        private String customer;
-        private String date;
-        private String status;
+    private void loadCompletedBookingsChart() {
+        Map<String, Integer> completedBookings = analyticsFactory.getCompletedBookingsAnalytics();
 
-        public Booking(String service, String customer, String date, String status) {
-            this.service = service;
-            this.customer = customer;
-            this.date = date;
-            this.status = status;
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.setName("Completed Bookings");
+
+        for (Map.Entry<String, Integer> entry : completedBookings.entrySet()) {
+            series.getData().add(new XYChart.Data<>(entry.getKey(), entry.getValue()));
         }
 
-        public String getService() { return service; }
-        public String getCustomer() { return customer; }
-        public String getDate() { return date; }
-        public String getStatus() { return status; }
+        bookingsBarChart.getData().add(series);
+    }
+
+    private void loadRevenuePieChart() {
+        Map<String, Double> revenueData = analyticsFactory.getRevenueAnalytics();
+
+        for (Map.Entry<String, Double> entry : revenueData.entrySet()) {
+            PieChart.Data slice = new PieChart.Data(entry.getKey(), entry.getValue());
+            revenuePieChart.getData().add(slice);
+        }
+    }
+
+    private void loadUserActivityChart() {
+        Map<String, Integer> userActivity = analyticsFactory.getUserSignupsAnalytics();
+
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.setName("User Signups");
+
+        for (Map.Entry<String, Integer> entry : userActivity.entrySet()) {
+            series.getData().add(new XYChart.Data<>(entry.getKey(), entry.getValue()));
+        }
+
+        userActivityLineChart.getData().add(series);
     }
 }

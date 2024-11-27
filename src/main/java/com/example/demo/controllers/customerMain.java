@@ -55,10 +55,7 @@ public class customerMain {
         }
     }
 
-    @FXML
-    private void loadMyAccountPane() {
-        loadPane("MyAccount.fxml");
-    }
+
 
     @FXML
     private void loadBookingPane() {
@@ -185,6 +182,22 @@ public class customerMain {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void loadMyAccountPane() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/MyAccount.fxml"));
+            Node node = loader.load();
+
+            // Pass userId to ViewBookingsController
+            MyAccount controller = loader.getController();
+            controller.setUserId(customerid);
+
+            mainContent.getChildren().setAll(node);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

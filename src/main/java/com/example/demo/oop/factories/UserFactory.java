@@ -35,11 +35,27 @@ public class UserFactory {
     // Signup Method
     public boolean signUpUser(String name, String email, String password, String phoneNumber, String role) {
         // Step 1: Insert user into the Users table
-        int userId = userQueries.insertUser(name, email, password, phoneNumber, role);
-        if (userId > 0) {
-            // Step 2: Insert into role-specific table
-            return userQueries.insertRoleSpecific(userId, role);
+        if (role.toLowerCase()=="service_owner"){
+            PendingServiceOwnerFactory pp= new PendingServiceOwnerFactory();
+            boolean id= pp.addPendingServiceOwner(name,email,password,phoneNumber);
+            if (id){
+                System.out.println("Inserted into check successfully");
+                return  true;
+            }
+            else {
+                System.out.println("Failed to insert into check");
+                return false;
+            }
         }
-        return false;
+        else {
+
+
+            int userId = userQueries.insertUser(name, email, password, phoneNumber, role);
+            if (userId > 0) {
+                // Step 2: Insert into role-specific table
+                return userQueries.insertRoleSpecific(userId, role);
+            }
+            return false;
+        }
     }
 }

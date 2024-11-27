@@ -193,4 +193,43 @@
 .axis-label, .axis-tick-mark-label {
     -fx-text-fill: white; /* Axis labels color */
 }
+/* General Text Style */
+.heading-white {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Bar Chart Style */
+.bar-chart, .pie-chart, .line-chart {
+    -fx-text-fill: white;
+}
+
+/* Label Hover Effects */
+.label:hover {
+    -fx-text-fill: gold; /* Change to gold on hover */
+    -fx-font-size: 26px; /* Slightly increase font size */
+    -fx-cursor: hand; /* Pointer cursor */
+}
+
+/* Axis Labels for Charts */
+.axis {
+    -fx-tick-label-fill: white; /* White text for axis labels */
+    -fx-label-padding: 5px;
+}
+
+.axis:hover {
+    -fx-tick-label-fill: lightblue; /* Hover color for axis labels */
+}
+
+/* Chart Hover Effects */
+.chart {
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 255, 0.8), 10, 0, 0, 0);
+    -fx-background-color: transparent;
+}
+
+.chart:hover {
+    -fx-effect: dropshadow(gaussian, lightblue, 15, 0.5, 0, 0);
+}
+
 

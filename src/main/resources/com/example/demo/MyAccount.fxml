@@ -4,29 +4,25 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="572.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.demo.controllers.MyAccount" stylesheets="@styles/dashboard-theme.css">
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Separator?>
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.MyAccount"
+            style="-fx-background-color: black; -fx-padding: 20;">
    <children>
-      <AnchorPane fx:id="mainContent" layoutX="17.0" layoutY="10.0" prefHeight="562.0" prefWidth="561.0" styleClass="main-content">
-         <children>
-            <!-- Page Title -->
-            <Label fx:id="placeholderLabel" layoutX="200.0" layoutY="14.0" text="Customer Dashboard" styleClass="heading" />
+      <VBox spacing="15" layoutX="20" layoutY="20" prefWidth="300">
+         <Label text="My Account" style="-fx-font-size: 20px; -fx-text-fill: white;" />
+         <TextField fx:id="nameField" promptText="Name" />
+         <TextField fx:id="emailField" promptText="Email" />
+         <TextField fx:id="phoneField" promptText="Phone" />
+         <Button text="Save Changes" fx:id="saveDetailsButton" onAction="#handleSaveDetails" />
 
-            <!-- Edit Button -->
-            <Button fx:id="editButton" layoutX="252.0" layoutY="475.0" mnemonicParsing="false" text="Edit" styleClass="action-button" onAction="#loadEditPane" />
+         <Separator />
 
-            <!-- Labels for User Details -->
-            <Label fx:id="nameLabel" layoutX="84.0" layoutY="178.0" text="Name:" styleClass="text-white" />
-            <Label fx:id="usernameLabel" layoutX="84.0" layoutY="273.0" text="Username:" styleClass="text-white" />
-            <Label fx:id="passwordLabel" layoutX="84.0" layoutY="321.0" text="Password:" styleClass="text-white" />
-            <Label fx:id="emailLabel" layoutX="85.0" layoutY="225.0" text="Email:" styleClass="text-white" />
-
-            <!-- User Information -->
-            <Label fx:id="nameValue" layoutX="172.0" layoutY="178.0" text="Abdur Raheem" styleClass="text-bold" />
-            <Label fx:id="emailValue" layoutX="172.0" layoutY="225.0" text="Abdurraheemshaikh69@gmail.com" styleClass="text-bold" />
-            <Label fx:id="usernameValue" layoutX="172.0" layoutY="273.0" text="Abdurraheem" styleClass="text-bold" />
-            <Label fx:id="passwordValue" layoutX="172.0" layoutY="321.0" text="password123" styleClass="text-bold" />
-         </children>
-      </AnchorPane>
+         <TextField fx:id="currentPasswordField" promptText="Current Password" />
+         <TextField fx:id="newPasswordField" promptText="New Password" />
+         <Button text="Change Password" fx:id="changePasswordButton" onAction="#handleChangePassword" />
+      </VBox>
    </children>
 </AnchorPane>

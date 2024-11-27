@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1"
+            fx:controller="com.example.demo.controllers.PendingOwnersController" prefHeight="600" prefWidth="800">
+    <children>
+        <Label text="Pending Service Owners" layoutX="20" layoutY="20" style="-fx-font-size: 20; -fx-text-fill: #333;" />
+
+        <TableView fx:id="pendingOwnersTable" layoutX="20" layoutY="60" prefWidth="760" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="240" />
+                <TableColumn fx:id="emailColumn" text="Email" prefWidth="240" />
+                <TableColumn fx:id="phoneColumn" text="Phone Number" prefWidth="240" />
+            </columns>
+        </TableView>
+
+        <Button fx:id="approveButton" text="Approve" layoutX="20" layoutY="480" prefWidth="100" onAction="#handleApproveAction" />
+        <Button fx:id="disapproveButton" text="Disapprove" layoutX="140" layoutY="480" prefWidth="100" onAction="#handleDisapproveAction" />
+    </children>
+</AnchorPane>

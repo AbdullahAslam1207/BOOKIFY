@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.demo.controllers.ViewBookingAdminController"
-            stylesheets="@styles/dashboard-theme.css">
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controllers.ViewBookingAdminController" style="-fx-background-color: black;">
     <children>
-        <!-- Page Title Label with fx:id -->
-        <Label fx:id="pageTitle" text="View Confirmed or Canceled Bookings" layoutX="20" layoutY="20" styleClass="heading" />
+        <!-- Page Title -->
+        <Label text="Admin Analytics Dashboard" layoutX="20" layoutY="20" styleClass="heading-white" />
 
-        <!-- TableView for displaying bookings -->
-        <TableView fx:id="bookingsTable" layoutX="20" layoutY="60" prefWidth="560" prefHeight="300">
-            <columns>
-                <TableColumn fx:id="serviceColumn" text="Service" prefWidth="140" />
-                <TableColumn fx:id="customerColumn" text="Customer" prefWidth="140" />
-                <TableColumn fx:id="dateColumn" text="Date" prefWidth="140" />
-                <TableColumn fx:id="statusColumn" text="Status" prefWidth="140" />
-            </columns>
-        </TableView>
+        <!-- Bar Chart for Completed Bookings -->
+        <BarChart fx:id="bookingsBarChart" layoutX="20" layoutY="60" prefWidth="360" prefHeight="300">
+            <xAxis>
+                <CategoryAxis fx:id="serviceAxis" label="Service" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="bookingsAxis" label="Completed Bookings" />
+            </yAxis>
+        </BarChart>
+
+        <!-- Pie Chart for Revenue Breakdown -->
+        <PieChart fx:id="revenuePieChart" layoutX="400" layoutY="60" prefWidth="360" prefHeight="300" />
+
+        <!-- Line Chart for User Activity -->
+        <LineChart fx:id="userActivityLineChart" layoutX="20" layoutY="400" prefWidth="740" prefHeight="300">
+            <xAxis>
+                <CategoryAxis fx:id="dateAxis" label="Date" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="userSignupsAxis" label="Signups" />
+            </yAxis>
+        </LineChart>
     </children>
 </AnchorPane>

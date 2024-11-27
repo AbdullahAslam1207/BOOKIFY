@@ -65,7 +65,7 @@ public class AdminDashboardController {
 
     @FXML
     private void loadAuthorizeUserAdminPane() {
-        loadPane("AuthorizeUserAdmin.fxml");
+        loadPane("PendingOwners.fxml");
     }
 
 
